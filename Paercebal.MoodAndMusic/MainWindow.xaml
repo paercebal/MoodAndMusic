@@ -1,0 +1,32 @@
+﻿<Window x:Class="Paercebal.MoodAndMusic.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Paercebal.MoodAndMusic"
+        mc:Ignorable="d"
+        Title="Mood &amp; Music" Height="250" Width="400">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            <ComboBox Name="SelectedFile" Grid.Row="0" >
+                <ComboBoxItem IsSelected="True">media/11 - Vault.mp3</ComboBoxItem>
+                <ComboBoxItem>media/uncharted_worlds.mp3</ComboBoxItem>
+                <ComboBoxItem>media/vigil.mp3</ComboBoxItem>
+            </ComboBox>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Click="Play_Click">Play</Button>
+                <Button Grid.Column="1" Click="Stop_Click">Stop</Button>
+            </Grid>
+            <Slider Name="Volume" Grid.Row="2" Orientation="Horizontal" Value="50" ValueChanged="Volume_ValueChanged" Minimum="0" Maximum="100" SmallChange="1" LargeChange="10" TickPlacement="BottomRight" TickFrequency="10"/>
+        </Grid>
+    </Grid>
+</Window>
